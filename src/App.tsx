@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+import { Box, Grid, Paper } from "@mui/material";
+
+import Form from "./components/Form";
+import WeatherDisplay from "./components/WeatherDisplay";
+import { WeatherResponse } from "./services/types";
+
+const App = () => {
+  const [weather, setWeather] = React.useState<WeatherResponse>();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box
+      height="100vh"
+      width="100vw"
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
+      ml={-0.5}
+      sx={{ position: "absolute" }}
+    >
+      <Grid container justifyContent="center" spacing={2} maxWidth={800}>
+        <Grid item xs={11}>
+          <Paper>
+            <Form setWeather={setWeather} />
+          </Paper>
+        </Grid>
+        {!!weather ? (
+          <Grid item xs={11}>
+            <WeatherDisplay weather={weather} />
+          </Grid>
+        ) : null}
+      </Grid>
+    </Box>
   );
-}
+};
 
 export default App;
