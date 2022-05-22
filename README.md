@@ -1,6 +1,8 @@
 # Weather App
 
-This is a React App that shows the weather for a chosen location.
+This is a React App that shows the weather for a chosen location. The application design is inspired in neumorphism and there are some animated raindrops on the background image (only for desktop due to the used library).
+
+Check an screenshot below:
 
 ![Weather App](./assets/weather.gif)
 
@@ -27,6 +29,7 @@ npm start
 - [Material UI](https://mui.com/)
 - [Axios](https://axios-http.com/)
 - [Formik](https://formik.org)
+- [RainyDay.js](https://mubaidr.js.org/rainyday.js/)
 
 ## API
 
